@@ -1,4 +1,4 @@
-// alert("hello");
+
 var buttonColours = ["green", "red", "yellow", "blue"];
 var gamePattern = [];
 var userClickedPattern = [];
@@ -16,20 +16,16 @@ $(document).on("keypress", function (key) {
 })
 //detect mouse click
 $(".btn").click(function () {
-    // while(gameProgress){
-
+ 
     var userChosenColor = $(this).attr("id");
 
     userClickedPattern.push(userChosenColor);
-
     makeSound(userChosenColor);
-    // nextSequence();
     animatePress(userChosenColor);
     checkAnswer(userClickedPattern.length - 1)
 });
 
 function checkAnswer(currentLevel) {
-    // console.log(cu)
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(() => {
